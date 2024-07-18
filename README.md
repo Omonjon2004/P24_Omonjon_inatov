@@ -1,0 +1,1 @@
+# P24_Omonjon_inatov
