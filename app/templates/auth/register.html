@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block title %} Register {% endblock %}
+
+{% block body %}
+<div class="container">
+    <h3>Register Page</h3>
+    <form method="post">
+        <div class="form-group">
+            <label for="full_name">{{ form.full_name.label }}</label>
+            {{ form.full_name(class="form-control") }}
+            {% for error in form.full_name.errors %}
+                <div class="text-danger">{{ error }}</div>
+            {% endfor %}
+        </div>
+        <div class="form-group">
+            <label for="username">{{form.username.label }}</label>
+            {{ form.username(class="form-control")}}
+            {%for error in form.username.errors %}
+              <div class="text-danger">{{ error }}</div>
+            {% endfor %}
+        </div>
+        <div class="form-group">
+            <label for="email">{{form.email.label }}</label>
+            {{ form.email(class="form-control")}}
+            {%for error in form.email.errors %}
+              <div class="text-danger">{{ error }}</div>
+            {% endfor %}
+        </div>
+
+        <div class="form-group">
+            <label for="password">{{form.password.label }}</label>
+            {{ form.password(class="form-control")}}
+            {%for error in form.password.errors %}
+              <div class="text-danger">{{ error }}</div>
+            {% endfor %}
+        </div>
+        <div class="form-group">
+            <label for="confirm_password">{{form.confirm_password.label }}</label>
+            {{ form.confirm_password(class="form-control")}}
+            {%for error in form.confirm_password.errors %}
+              <div class="text-danger">{{ error }}</div>
+            {% endfor %}
+        </div>
+        <div class="form-group">
+            {{ form.submit(class="btn btn-primary") }}
+        </div>
+        {{ form.hidden_tag() }}
+    </form>
+</div>
+{% endblock %}

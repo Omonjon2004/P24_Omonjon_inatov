@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}Update Book{% endblock %}
+
+{% block body %}
+   {% if books %}
+       <h2>Update BOOK</h2>
+       <h3>Select a book to update</h3>
+       <ul>
+           {% for book in books %}
+               <li>
+                   ID: {{ book.title }} <br>
+                   Title: {{ book.auther }}<br>
+                   Body: {{ book.page_count }}<br>
+                   <a href="{{ url_for('update_', book_id=book.id) }}" class="btn btn-primary">Edit</a>
+               </li>
+           {% endfor %}
+       </ul>
+   {% else %}
+       <h3>No book available.</h3>
+   {% endif %}
+{% endblock %}

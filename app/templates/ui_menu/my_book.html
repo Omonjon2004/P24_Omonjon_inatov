@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}My Books{% endblock %}
+
+{% block body %}
+
+    {% if books %}
+    <h3>My Book</h3>
+        {% for book in books %}
+        <div class="card mb-3">
+            <div class="card-body">
+                <h5 class="card-title">{{ book.title }}</h5>
+            </div>
+        </div>
+        {% endfor %}
+    {% else %}
+        <h3>You don't have any book</h3>
+    {% endif %}
+    <div>
+        <button ><a href="{{url_for('ui_menu')}}" style="text-align:center">Exit </a></button>
+    </div>
+{% endblock %}
